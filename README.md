@@ -4,6 +4,7 @@ HSRAndroid
 
 
 ** Prologue **
+--------------
 
 Hi I am xzs424 and a developer who participated in OpenHamilton Hackthathon 2014 on 26th July.I would like to thank the
 organizers for the inspiration and thus hereby the app is.
