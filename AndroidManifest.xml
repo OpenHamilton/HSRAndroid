@@ -7,46 +7,46 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
-    
-    
+
     <!-- define a permission -->
     <permission
         android:name="com.example.hsr.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature">
-         <!-- the application defines the permission and the application uses
-         the permission must be using the same code signature-->
+        android:protectionLevel="signature" >
+
+        <!--
+         the application defines the permission and the application uses
+         the permission must be using the same code signature
+        -->
     </permission>
-    
+
     <!-- use a permission defined -->
-    <uses-permission android:name="com.example.hsr.permission.MAPS_RECEIVE"/>
-    
- 
-    <uses-permission android:name="permission_name"/>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-	
-	<!-- use a permission from google play service ,miss the permission causes malfunction of map -->
-	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-	
-	<!-- add openGLES for map rendering  -->
-	<uses-feature
+    <uses-permission android:name="com.example.hsr.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="permission_name" />
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- use a permission from google play service ,miss the permission causes malfunction of map -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- add openGLES for map rendering -->
+    <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
-	<!--  true means if the device does not support the opengl version, then device is not allowed to install the app -->
+        android:required="true" />
+    <!-- true means if the device does not support the opengl version, then device is not allowed to install the app -->
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
-         <meta-data android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
-         
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -56,15 +56,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <!-- must be placed before end of <application> tag, the api key value
-        is only for one development computer-->
+
+        <!--
+        must be placed before end of <application> tag, the api key value
+        is only for one development computer
+        -->
         <meta-data
-   			 android:name="com.google.android.maps.v2.API_KEY"
-   			 android:value="AIzaSyAy_v-Tilaunr2QYRVh9ZKDtWkGZ1xZw8U"/>
-        
-        
-        
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAy_v-Tilaunr2QYRVh9ZKDtWkGZ1xZw8U" />
     </application>
 
 </manifest>
