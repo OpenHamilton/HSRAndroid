@@ -420,6 +420,11 @@ containing a value of this type.
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
         public static final int map=0x7f070017;
+        public static final int mapTypeHybrid=0x7f07001c;
+        public static final int mapTypeNone=0x7f07001d;
+        public static final int mapTypeNormal=0x7f070019;
+        public static final int mapTypeSatellite=0x7f07001a;
+        public static final int mapTypeTerrain=0x7f07001b;
         public static final int match_parent=0x7f07000c;
         public static final int monochrome=0x7f070013;
         public static final int none=0x7f070000;

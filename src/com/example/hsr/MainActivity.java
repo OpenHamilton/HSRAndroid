@@ -24,6 +24,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdate;
@@ -107,7 +108,20 @@ public class MainActivity extends FragmentActivity {
 //         
     }
     
-    private void gotoLocation(double lat,
+    
+    
+    
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+    	getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+
+
+
+	private void gotoLocation(double lat,
 			double lng, float zoom) {
 		// TODO Auto-generated method stub
     	
@@ -224,6 +238,35 @@ public class MainActivity extends FragmentActivity {
 		super.onSaveInstanceState(outState);
 		//mMapView.onSaveInstanceState(outState);
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		
+		switch(item.getItemId()){
+		
+		case R.id.mapTypeNone:
+			mMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+			break;
+		case R.id.mapTypeNormal:
+			mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+			break;
+		case R.id.mapTypeSatellite:
+			mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+			break;
+		case R.id.mapTypeTerrain:
+			mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+			break;
+		case R.id.mapTypeHybrid:
+			mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+			break;
+		
+		
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	
     
     
 }

@@ -103,6 +103,11 @@ int id holo_dark 0x7f070005
 int id holo_light 0x7f070006
 int id hybrid 0x7f070004
 int id map 0x7f070017
+int id mapTypeHybrid 0x7f07001c
+int id mapTypeNone 0x7f07001d
+int id mapTypeNormal 0x7f070019
+int id mapTypeSatellite 0x7f07001a
+int id mapTypeTerrain 0x7f07001b
 int id match_parent 0x7f07000c
 int id monochrome 0x7f070013
 int id none 0x7f070000
