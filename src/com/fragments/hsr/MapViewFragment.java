@@ -12,6 +12,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 
 
@@ -124,7 +125,7 @@ public class MapViewFragment extends Fragment implements OnClickListener {
 	}
 	 public void geoLocate() throws IOException {
 			
-			EditText et = (EditText) v.findViewById(R.id.editText1);
+			EditText et = (EditText) v.findViewById(R.id.editText_location);
 			String location = et.getText().toString();
 			Geocoder gc=new Geocoder(this.getActivity());
 			List<Address> list =gc.getFromLocationName(location, 1);
@@ -147,6 +148,15 @@ public class MapViewFragment extends Fragment implements OnClickListener {
 	
 	
 	
+	@Override
+	public void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
+		MapStateManager mgr= new MapStateManager(this.getActivity());
+		mgr.saveMapState(map);
+		
+	}
 	@Override
 	public void onDestroy() {
 		
@@ -174,6 +184,16 @@ public class MapViewFragment extends Fragment implements OnClickListener {
 		super.onResume();
 		
 		mapView.onResume();
+		MapStateManager mgr =new MapStateManager(getActivity());
+		CameraPosition position=mgr.getSavedCameraPosition();
+		if(position !=null){
+			
+			CameraUpdate update =CameraUpdateFactory.newCameraPosition(position);
+			map.moveCamera(update);
+			
+		}
+		
+		
 	}
 	@Override
 	public void onClick(View v) {

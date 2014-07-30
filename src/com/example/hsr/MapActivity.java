@@ -186,7 +186,7 @@ public class MapActivity extends FragmentActivity {
     public void geoLocate(View v) throws IOException {
 		hideSoftKeyboard(v);
 		
-		EditText et = (EditText) findViewById(R.id.editText1);
+		EditText et = (EditText) findViewById(R.id.editText_location);
 		String location = et.getText().toString();
 		Geocoder gc=new Geocoder(this);
 		List<Address> list =gc.getFromLocationName(location, 1);
