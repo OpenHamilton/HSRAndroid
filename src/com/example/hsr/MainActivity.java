@@ -122,13 +122,13 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	public void onTabUnselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
 		
-		Toast.makeText(this, tab.getText()+" unselected", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, tab.getText()+" unselected", Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
-		Toast.makeText(this, tab.getText()+" reselected", Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, tab.getText()+" reselected", Toast.LENGTH_SHORT).show();
 	}
      
 	
@@ -154,11 +154,23 @@ public boolean servicesOK(){
     		Toast.makeText(this,"Can not connect to Google Play services"
     				,Toast.LENGTH_SHORT).show();
     		
+    		
     	}
     	
     	return false;
     	
     }
+
+	@Override
+	protected void onDestroy() {
+	// TODO Auto-generated method stub
+	super.onDestroy();
+	mTabsPagerAdapter.destoryFragments();
+	
+	}
+
+   
+
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.

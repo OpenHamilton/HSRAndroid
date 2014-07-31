@@ -28,9 +28,17 @@ public class TabsPagerAdapter extends FragmentPagerAdapter  {
 			"Account"
 	};
 	
+	RouteListFragment routelistfragment;
+	MapViewFragment mapviewfragment;
+	AccountManageFragment accountmanagefragment;
+	
 	public TabsPagerAdapter(FragmentManager fm) {
 		super(fm);
-		// TODO Auto-generated constructor stub
+		
+		routelistfragment=new RouteListFragment();
+		mapviewfragment=new MapViewFragment();
+		accountmanagefragment=new AccountManageFragment();
+		
 	}
 
 	@Override
@@ -41,16 +49,16 @@ public class TabsPagerAdapter extends FragmentPagerAdapter  {
 		
 		case 0:
 			
-			return new RouteListFragment();
+			return routelistfragment;
 			
 			
 		case 1:
 			
-			return new MapViewFragment();
+			return mapviewfragment;
 			
 		case 2:
 			
-			return new AccountManageFragment();
+			return accountmanagefragment;
 			
 		
 		}
@@ -70,5 +78,24 @@ public class TabsPagerAdapter extends FragmentPagerAdapter  {
 		return tabs[position];
 	}
 	
+	
+	public void destoryFragments(){
+		
+//		if(routelistfragment!=null)
+//			routelistfragment.getActivity().
+//			getFragmentManager().beginTransaction().remove(routelistfragment).commit();
+//		
+//		if(mapviewfragment!=null)
+//			mapviewfragment.getActivity().
+//			getFragmentManager().beginTransaction().remove(mapviewfragment).commit();
+//		
+//		if(accountmanagefragment!=null)
+//			accountmanagefragment.getActivity().
+//			getFragmentManager().beginTransaction().remove(accountmanagefragment).commit();
+		
+		
+		
+	}
+
 
 }
